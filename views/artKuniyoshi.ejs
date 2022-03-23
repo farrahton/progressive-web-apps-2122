@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+
+    <main>
+        <section id="Kuniyoshi">
+            <ul>
+
+                <% data.forEach((artworkKuniyoshi)=> { %>
+                    <li>
+                        <img src=<%=artworkKuniyoshi.webImage.url.slice(0, -3)+'=s1000' %> alt=<%=
+                            artworkKuniyoshi.title %>
+                            >
+                            <section>
+                                <h2>
+                                    <%= artworkKuniyoshi.title %>
+                                </h2>
+                            </section>
+                    </li>
+
+                    <% }) %>
+
+            </ul>
+        </section>

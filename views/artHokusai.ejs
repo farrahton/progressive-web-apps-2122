@@ -1,0 +1,21 @@
+<%- include('./partials/head') %>
+
+    <main>
+        <section id="hokusai">
+            <ul>
+
+                <% data.forEach((artworkHokusai)=> { %>
+                    <li>
+                        <img src=<%=artworkHokusai.webImage.url.slice(0, -3)+'=s1000' %> alt=<%= artworkHokusai.title %>
+                            >
+                            <section>
+                                <h2>
+                                    <%= artworkHokusai.title %>
+                                </h2>
+                            </section>
+                    </li>
+
+                    <% }) %>
+
+            </ul>
+        </section>
