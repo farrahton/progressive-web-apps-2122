@@ -17,6 +17,10 @@ app.get('/', (request, response) => {
   response.render('index')
 })
 
+app.get('/DiscoverArt', (request, response) => {
+  response.render('index')
+})
+
 // route for artworks hokusai
 app.get('/KatsushikaHokusai', async (req, res) => {
   const urlHokusai = `https://www.rijksmuseum.nl/api/nl/collection?key=9c1DbBQC&involvedMaker=Katsushika+Hokusai&ps=30`
@@ -58,66 +62,6 @@ app.get('/UtagawaKuniyoshi', async (req, res) => {
     data: response.artObjects
   })
 })
-
-
-
-// route for home discover page with searchbar
-app.get('/DiscoverArt', async (req, res) => {
-  const APIlink = 'https://www.rijksmuseum.nl/api/en/collection?key=9c1DbBQC&ps=20';
-
-  const dataSearchRijks = 'https://www.rijksmuseum.nl/api/nl/collection?key=xvdOJegg&ps&q='
-
-  function mySearch() {
-    let fullCollection;
-
-    // Function fetching broad data base to search in
-    fetch(APIlink)
-      .then(function (response) {
-        return response.json()
-      })
-
-      // Function logging the response of requested data 
-      .then(function (data) {
-        fullCollection = data;
-        console.log(data);
-      })
-  }
-
-  function searchDataRijks(searchValue) {
-
-    const resultsData = dataSearchRijks + searchValue;
-
-    fetch(resultsData)
-      .then(function (response) {
-        return response.json();
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
-
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // setup for localhost port
 app.set('port', process.env.PORT || 1989)
