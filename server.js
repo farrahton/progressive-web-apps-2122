@@ -63,18 +63,41 @@ app.get('/UtagawaKuniyoshi', async (req, res) => {
   })
 })
 
+// app.get('/search', (req, res) => {
+//   // fetch(`https://api.themoviedb.org/3/search/movie?query=${req.query.query}&api_key=${process.env.MOVIEDB_TOKEN}`)
+//   fetch('https://www.rijksmuseum.nl/api/nl/collection?key=9c1DbBQC&ps&q='
+//   .then(async response => {
+//       const movieData = await response.json()
+//       const templateData = {
+//         query: req.query.query,
+//         movieData,
+//         revManifest
+//       }
+
+//       if (req.query.async) {
+//         res.render('partials/result-list', { query: req.query.query, results: movieData.results })
+//       } else {
+//         res.render('results', templateData);
+//       }
+//     })
+// })
+
+app.get('/search', (req, res) => {
+  // console.log('search!')
+  fetch(`https://www.rijksmuseum.nl/api/nl/collection?key=9c1DbBQC&q=${req.query.query}`)
+    .then(async response => {
+      const search = await response.json()
+      res.render('results', {
+        pageTitle: `artworks: ${req.query.q}`,
+        data: search.artObjects
+      })
+    })
+    .catch(err => res.send(err))
+})
+
 // setup for localhost port
 app.set('port', process.env.PORT || 1989)
-
 
 app.listen(app.get('port'), function () {
   console.log(`Application started on port: ${app.get('port')}`)
 })
-
-/**
- * Wraps the fetch api and returns the response body parsed through json
- * @param {*} url the api endpoint to address
- * @returns the json response from the api endpoint
- */
-const urlHokusai = 'https://www.rijksmuseum.nl/api/nl/collection?key=9c1DbBQC&involvedMaker=Katsushika+Hokusai&ps=30'
-

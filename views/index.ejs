@@ -16,11 +16,11 @@
           <h4>The place to discover art</h4>
           <h5>Don't forget to check out the highlighted artists Hokusai and Kuniyoshi at the top of this website!</h5>
         </article>
-        <form method="get" action="/search">
+        <form method="get" action="/search" class="search-form" data-search-form>
           <!--action="/DiscoverArt/value" -->
-          <input type="search" placeholder="Search for artists..." id="searchField">
-          <button type="submit" value="search" id="searchButton">
-          </button>
+          <input type="search" placeholder="Search for artists..." id="search" name="query" class="search-form__input"
+            data-search-input>
+          <button type="submit" value="search" id="searchButton"></button>
         </form>
       </article>
       <ul></ul>
