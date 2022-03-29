@@ -19,7 +19,6 @@
                         website!</h5>
                 </article>
                 <form method="get" action="/search" class="search-form" data-search-form>
-                    <!--action="/DiscoverArt/value" -->
                     <input type="search" placeholder="Search for artists..." id="search" name="query"
                         class="search-form__input" data-search-input>
                     <button type="submit" value="search" id="searchButton"></button>
@@ -30,13 +29,15 @@
 
                 <% data.forEach((artworks)=> { %>
                     <li>
-                        <img src=<%=artworks.webImage.url.slice(0, -3)+'=s1000' %> alt=<%= artworks.title %>
-                            >
-                            <section>
-                                <h2>
-                                    <%= artworks.title %>
-                                </h2>
-                            </section>
+                        <% if (artworks.webImage) { %>
+                            <img src=<%=artworks.webImage.url.slice(0, -3)+'=s1000' %> alt=<%= artworks.title %>
+                                >
+                                <% } %>
+                                    <section>
+                                        <h2>
+                                            <%= artworks.title %>
+                                        </h2>
+                                    </section>
                     </li>
 
                     <% }) %>

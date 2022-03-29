@@ -5,7 +5,7 @@
   "name": "progressive-web-apps-2122",
   "description": "![pwa](https://user-images.githubusercontent.com/3104648/28351989-7f68389e-6c4b-11e7-9bf2-e9fcd4977e7a.png)",
   "version": "1.0.0",
-  "main": "sernver.js",
+  "main": "server.js",
   "directories": {
     "doc": "docs",
     "example": "examples"

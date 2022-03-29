@@ -1,6 +1,5 @@
 require('dotenv').config()
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
-// const fetchArt = require('./fetchArt')
 
 const express = require('express')
 const app = express()
@@ -14,10 +13,6 @@ app.use(express.static('public'))
 
 // route for index
 app.get('/', (request, response) => {
-  response.render('index')
-})
-
-app.get('/DiscoverArt', (request, response) => {
   response.render('index')
 })
 
@@ -63,25 +58,7 @@ app.get('/UtagawaKuniyoshi', async (req, res) => {
   })
 })
 
-// app.get('/search', (req, res) => {
-//   // fetch(`https://api.themoviedb.org/3/search/movie?query=${req.query.query}&api_key=${process.env.MOVIEDB_TOKEN}`)
-//   fetch('https://www.rijksmuseum.nl/api/nl/collection?key=9c1DbBQC&ps&q='
-//   .then(async response => {
-//       const movieData = await response.json()
-//       const templateData = {
-//         query: req.query.query,
-//         movieData,
-//         revManifest
-//       }
-
-//       if (req.query.async) {
-//         res.render('partials/result-list', { query: req.query.query, results: movieData.results })
-//       } else {
-//         res.render('results', templateData);
-//       }
-//     })
-// })
-
+// Search bar
 app.get('/search', (req, res) => {
   // console.log('search!')
   fetch(`https://www.rijksmuseum.nl/api/nl/collection?key=9c1DbBQC&q=${req.query.query}`)
