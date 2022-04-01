@@ -215,6 +215,10 @@ h3 {
 }
 
 /* Rendered HTML artwork styling */
+#home ul {
+    margin-top: 25em;
+}
+
 ul {
     display: flex;
     margin-top: 0px;
@@ -283,6 +287,3 @@ h2 {
 	font-size: calc(.4vw + .4vh + .4vmin);
 }
 
-#home ul {
-    margin-top: 25em;
-}
