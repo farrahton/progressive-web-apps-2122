@@ -1,18 +1,20 @@
 // Dev tools -> application -> cache storage you can see these cacheFiles.
-const publicCacheName = 'DJAcachingV1';
-const dynamicCache = 'dynamicSiteV1';
+const publicCacheName = 'DJAPublicCachingV1';
+const dynamicCache = 'DJADynamicCachingV1';
 const cacheFiles = [
     './',
-    './images',
+    './images/favicon.ico',
+    './images/manifestIcon.png',
+    './images/tsunami.jpeg',
     './css/style.css'
 ];
 
 
-self.addEventListener('install', evt => {
+self.addEventListener('install', e => {
     // console.log('service worker has been installed');
-    evt.waitUntil(
+    e.waitUntil(
         caches.open(publicCacheName).then(cache => {
-            console.log('caching shell cacheFiles');
+            console.log('caching cacheFiles');
             cache.addAll(cacheFiles);
         })
     );
@@ -20,9 +22,9 @@ self.addEventListener('install', evt => {
 
 // activate event
 
-self.addEventListener('activate', evt => {
+self.addEventListener('activate', e => {
     // console.log('service worker has been activated');
-    evt.waitUntil(
+    e.waitUntil(
         caches.keys().then(keys => {
             // console.log(keys); 
             return Promise.all(keys
@@ -35,13 +37,13 @@ self.addEventListener('activate', evt => {
 
 // fetch
 
-self.addEventListener('fetch', evt => {
-    // console.log('fetch event', evt);
-    evt.respondWith(
-        caches.match(evt.request).then(cacheRes => {
-            return cacheRes || fetch(evt.request).then(fetchRes => {
+self.addEventListener('fetch', e => {
+    // console.log('fetch event', e);
+    e.respondWith(
+        caches.match(e.request).then(cacheRes => {
+            return cacheRes || fetch(e.request).then(fetchRes => {
                 return caches.open(dynamicCache).then(cache => {
-                    cache.put(evt.request.url, fetchRes.clone());
+                    cache.put(e.request.url, fetchRes.clone());
                     return fetchRes;
                 })
             });
