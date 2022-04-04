@@ -60,7 +60,6 @@ app.get('/UtagawaKuniyoshi', async (req, res) => {
 
 // Search bar
 app.get('/search', (req, res) => {
-  // console.log('search!')
   fetch(`https://www.rijksmuseum.nl/api/nl/collection?key=9c1DbBQC&q=${req.query.query}`)
     .then(async response => {
       const search = await response.json()
