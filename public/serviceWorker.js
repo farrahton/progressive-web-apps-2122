@@ -1,3 +1,16 @@
+// Dev tools -> application -> cache storage you can see these cacheFiles.
+const cacheName = 'DJA-caching';
+const cacheFiles = [
+    './',
+    './images',
+    './style.css',
+    './js/app.js',
+    './serviceWorker.js',
+    './manifest.json',
+    '/KatsushikaHokusai',
+    '/UtagawaKuniyoshi'
+]
+
 self.addEventListener('install', event => {
     console.log('Installing service worker')
 
@@ -95,14 +108,3 @@ function getPathName(requestUrl) {
 }
 
 
-// Dev tools -> application -> cache storage you can see these cacheFiles.
-const cacheName = 'DJA-caching';
-const cacheFiles = [
-    './',
-    './images',
-    './style.css',
-    './js/app.js',
-    './manifest.json',
-    '/KatsushikaHokusai',
-    '/UtagawaKuniyoshi'
-]
