@@ -1,14 +1,15 @@
 // Dev tools -> application -> cache storage you can see these cacheFiles.
-const publicCacheName = 'DJAPublicCachingV1';
+const publicCacheName = 'DJAPublicCachingV11';
 const dynamicCache = 'DJADynamicCachingV1';
 const cacheFiles = [
     './',
     './images/favicon.ico',
     './images/manifestIcon.png',
-    './images/tsunami.jpeg',
+    './images/tsunami.avif',
     './css/style.css'
 ];
 
+// install event 
 
 self.addEventListener('install', e => {
     // console.log('service worker has been installed');
@@ -47,8 +48,35 @@ self.addEventListener('fetch', e => {
                     return fetchRes;
                 })
             });
+
         })
     );
 });
 
+// //Delete cache html pages when the length is bigger than 10
+// e.respondWith(
+//     caches.open('dynamicCache')
+//         .then(cache => {
+//             return cache.match(e.request.url)
+//         })
+//         //Cache the html page
+//         .then(response => response ? response : fetchAndCache(e.request, 'dynamicCache'))
+//         // generic fallback to a offline page
+//         .catch(e => {
+//             return caches.open(publicCacheName)
+//                 .then(cache => cache.match('/offline'))
+//         }))
+
+// function fetchAndCache(request, cacheName) {
+//     return fetch(request)
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new TypeError('Bad response status');
+//             }
+
+//             const clone = response.clone()
+//             caches.open(cacheName).then((cache) => cache.put(request, clone))
+//             return response
+//         })
+// }
 

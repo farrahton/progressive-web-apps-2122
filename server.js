@@ -3,6 +3,7 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 
 const express = require('express')
 const app = express()
+const compression = require('compression')
 
 // ejs becomes the template engine
 app.set('view engine', 'ejs')
@@ -10,6 +11,8 @@ app.set('views', './views')
 
 // creating a static map 
 app.use(express.static('public'))
+
+app.use(compression())
 
 // route for index
 app.get('/', (request, response) => {
@@ -69,6 +72,12 @@ app.get('/search', (req, res) => {
       })
     })
     .catch(err => res.send(err))
+})
+
+app.get('/offline', (req, res) => {
+  res.render('offline', {
+    pageTitle: `offline`
+  });
 })
 
 // setup for localhost port

@@ -11,15 +11,26 @@
 
     <section id="home">
       <article class="container">
-        <img src="/images/tsunami.jpeg">
+        <img src="/images/tsunami.avif" srcset="/images/tsunami.avif 120w,
+                    /images/tsunami.avif 200w,
+                    /images/tsunami.avif 300w" sizes="(max-width: 710px) 120px,
+                    (max-width: 991px) 193px,
+                    278px" alt="The Great Wave painting">
+
+        <!-- <img src="/images/tsunami.avif" srcset="/images/tsunami.avif 120w,
+                    /images/tsunami.avif 200w,
+                    /images/tsunami.avif 300w" sizes="((min-width: 10em),
+                   ((min-width: 30em) and (max-width: 40em)) 30em,
+                    (min-width: 40em) 40em" alt="The Great Wave painting"> -->
+
         <article class="text">
-          <h4>The place to discover art</h4>
-          <h5>Don't forget to check out the highlighted artists Hokusai and Kuniyoshi at the top of this website!</h5>
+          <h2>The place to discover art</h4>
+            <p>Don't forget to check out the highlighted artists Hokusai and Kuniyoshi at the top of this website!</p>
         </article>
         <form method="get" action="/search" class="search-form" data-search-form>
           <input type="search" placeholder="Search for artists..." id="search" name="query" class="search-form__input"
             data-search-input>
-          <button type="submit" value="search" id="searchButton"></button>
+          <button type="submit" value="search" id="searchButton" aria-label="search button"></button>
         </form>
       </article>
       <ul></ul>
