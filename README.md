@@ -108,8 +108,6 @@ https://web.dev/add-manifest/#:~:text=The%20web%20app%20manifest%20is,when%20the
 
 We create a service worker to enable applications to control network requests, cache those requests to improve performance, and provide offline access to cached content. For this i created an <code>app.js file</code> and a <code>serviceWorker.js</code> file in the public folder so it can control all the files in that folder.
 
-## Steps in the code
-
 1. The install event is the first event a service worker gets, and it only happens once.
 2. <code>e.waitUntil</code> signals the duration and succes or failure of your install.
 3. The activate event is necessary, because without it the service worker can't receive the <code>fetch</code> after it successfully finishes installing. 
@@ -148,9 +146,22 @@ And use it:
 app.use(compression())
 ```
 
+<details>
+  <summary> sources </summary>
+  https://www.youtube.com/playlist?list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7 
+         </details>
 
 # Checklist
-- [ ] 
+- [ x ] learn node.js
+- [ x ] show art in ejs
+- [ x ] searchbar works in ejs
+- [ x ] learn to use some tooling
+- [ x ] implement a service worker
+- [ x ] 100% in lighthouse
+- [ x ] live demo on heroku
+- [  ] clean/restart caching when almost full
+- [  ] import a font and use font-display: swap in CSS
+- [  ] implement everything from Smashing article https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/ 
 
 
 
