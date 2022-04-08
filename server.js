@@ -34,7 +34,7 @@ app.get('/KatsushikaHokusai', async (req, res) => {
         error: e,
       })
     })
-  console.log(response)
+  // console.log(response)
   res.render('artHokusai', {
     data: response.artObjects
   })
@@ -55,7 +55,7 @@ app.get('/UtagawaKuniyoshi', async (req, res) => {
         error: e,
       })
     })
-  console.log(response)
+  // console.log(response)
   res.render('artKuniyoshi', {
     data: response.artObjects
   })
@@ -74,11 +74,11 @@ app.get('/search', (req, res) => {
     .catch(err => res.send(err))
 })
 
-app.get('/offline', (req, res) => {
-  res.render('offline', {
-    pageTitle: `offline`
-  });
-})
+// app.get('/offline', (req, res) => {
+//   res.render('offline', {
+//     pageTitle: `offline`
+//   });
+// })
 
 // setup for localhost port
 app.set('port', process.env.PORT || 1989)

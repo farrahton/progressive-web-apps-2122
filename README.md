@@ -2,15 +2,26 @@
 
 ![pwa](https://user-images.githubusercontent.com/3104648/28351989-7f68389e-6c4b-11e7-9bf2-e9fcd4977e7a.png)
 
+# DJA Concept
+On Discover Japanese Artist you can, as the name suggests, discover japanese artists their artworks. Two artists are highlighted and you can search other artists in the search bar. At first you glance you can only see the artwork images. Upon a mouseover you can see the title. 
+
+# Link to live demo
+
+https://farrahton-pwa-rijksmuseum.herokuapp.com/ 
+
 # How to install this project
 
-Clone this repo
+Clone this repo and paste it into VSC for example.
 
 ```
 $ git clone https://github.com/farrahton/progressive-web-apps-2122.git 
 ```
 
-# Refactor the WAFS (or OBA) App to a server side version with Node.js & Express
+# Activity diagram
+
+
+
+# Refactoring to a server side version with Node.js & Express and its tooling 
 
 ## Download node.js:
 1. Go to the Node.js Downloads page
@@ -61,7 +72,9 @@ Then write a script for when you type 'npm start' in the terminal it will automa
   }
   ```
 
-# Create a manifest
+# Convert into a Progressive Web App
+
+## Create a manifest
 
 The web app manifest is a JSON file that tells the browser about your Progressive Web App and how it should behave when installed on the user's desktop or mobile device. A typical manifest file includes the app name, the icons the app should use, and the URL that should be opened when the app is launched.
 
@@ -91,4 +104,45 @@ https://web.dev/add-manifest/#:~:text=The%20web%20app%20manifest%20is,when%20the
 
 # Service worker
 
-We create a service worker to enable applications to control network requests, cache those requests to improve performance, and provide offline access to cached content. For this i created an <code>app.js file</code> and a <code>serviceWorker.js</code> file in the public folder.
+We create a service worker to enable applications to control network requests, cache those requests to improve performance, and provide offline access to cached content. For this i created an <code>app.js file</code> and a <code>serviceWorker.js</code> file in the public folder so it can control all the files in that folder.
+
+## Steps in the code
+
+1. The install event is the first event a service worker gets, and it only happens once.
+2. <code>e.waitUntil</code> signals the duration and succes or failure of your install.
+3. The activate event is necessary, because without it the service worker can't receive the <code>fetch</code> after it successfully finishes installing. 
+4. By default, a page's fetches won't go through a service worker unless the page request itself went through a service worker. So you'll need to refresh the page to see the effects of the service worker.
+
+# Lighthouse
+
+Improved performance by changing the file type of the great wave header image from jpeg to avif. The performance changed from 70% to 94%. 
+
+Added an alt text to the before mentioned header image and added an <code>aria-label</code> to the submit button for the searchbar. This improved the accessability from 71% to 98%.
+
+## Compression 
+
+This is a Node.js module available through the npm registry. Installation is done using the npm install command:
+
+```
+$ npm install compression
+```
+
+write a const 
+
+```js
+const compression = require('compression')
+```
+
+And use it:
+
+```js
+app.use(compression())
+```
+
+
+# Checklist
+- [ ] 
+
+
+
+
