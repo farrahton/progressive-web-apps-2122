@@ -121,9 +121,12 @@ Improved performance by changing the file type of the great wave header image fr
 
 Added an alt text to the before mentioned header image and added an <code>aria-label</code> to the submit button for the searchbar. This improved the accessability from 71% to 98%.
 
-Right now everything is at 100%:
+Right now everything is at 100% on every page:
 
-<img width="1221" alt="Screenshot 2022-04-08 at 13 54 32" src="https://user-images.githubusercontent.com/92303930/162430992-1d338e96-ca70-411c-a0b2-f10b8b18beee.png">
+<img width="1221" alt="home japanese art lighthouse stats" src="https://user-images.githubusercontent.com/92303930/162430992-1d338e96-ca70-411c-a0b2-f10b8b18beee.png">
+
+<img width="1206" alt="artists lighthouse stats" src="https://user-images.githubusercontent.com/92303930/162431755-49b4166c-f6b1-4968-a39d-ce65760322d2.png">
+
 
 ## Compression 
 
