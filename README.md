@@ -19,7 +19,7 @@ $ git clone https://github.com/farrahton/progressive-web-apps-2122.git
 
 # Activity diagram
 
-<img width="526" alt="activity diagram" src="https://user-images.githubusercontent.com/92303930/162415140-756da919-8b90-4c7f-9506-5d7dd268d6ab.png">
+<img width="622" alt="activity diagram" src="https://user-images.githubusercontent.com/92303930/162420795-1675e9bb-f8c6-4985-91d5-f3865c5b0b33.png">
 
 # Refactoring to a server side version with Node.js & Express and its tooling 
 
