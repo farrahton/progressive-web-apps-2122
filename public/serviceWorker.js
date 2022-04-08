@@ -1,11 +1,11 @@
 // Dev tools -> application -> cache storage you can see these cacheFiles.
-const publicCacheName = 'DJAPublicCachingV11';
+const publicCacheName = 'DJAPublicCachingV13';
 const dynamicCache = 'DJADynamicCachingV1';
 const cacheFiles = [
     './',
     './images/favicon.ico',
     './images/manifestIcon.png',
-    './images/tsunami.avif',
+    './images/tsunami.webp',
     './css/style.css'
 ];
 

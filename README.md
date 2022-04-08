@@ -117,9 +117,12 @@ We create a service worker to enable applications to control network requests, c
 
 # Lighthouse
 
-Improved performance by changing the file type of the great wave header image from jpeg to avif. The performance changed from 70% to 94%. 
+Improved performance by changing the file type of the great wave header image from jpeg to webp. The performance changed from 70% to 94%. Reducing the size of webp file made it a 100%.
 
 Added an alt text to the before mentioned header image and added an <code>aria-label</code> to the submit button for the searchbar. This improved the accessability from 71% to 98%.
+
+Currently everything is at 100%:
+
 
 ## Compression 
 
