@@ -5,6 +5,8 @@
 # DJA Concept
 On Discover Japanese Artist you can, as the name suggests, discover japanese artists their artworks. Two artists are highlighted and you can search other artists in the search bar. At first you glance you can only see the artwork images. Upon a mouseover you can see the title. 
 
+More info about this website client side for WAFs can be found here: https://github.com/farrahton/WAFS-FarrahtonPiers
+
 # Link to live demo
 
 https://farrahton-pwa-rijksmuseum.herokuapp.com/ 
